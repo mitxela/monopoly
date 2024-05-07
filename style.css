@@ -1,0 +1,196 @@
+body{font-family:Arial,sans-serif;}
+
+#pageLoading {
+  background: #fff; 
+  position:fixed; width:100%;height:100%; top:0;left:0; 
+  z-index:50;
+  text-align:center;
+  font-size:5em;
+  line-height:500px;
+}
+
+#msg,#glog {
+  width:300px; height: 200px; overflow: auto; resize:both; padding:2px; border:1px solid #777;
+}
+#msg{border-width:0px 1px;}
+#glog{border-width:0px 1px 1px;}
+
+.draggable{
+ padding:0px;border:0px; background:#eee;position:absolute;
+ box-shadow: 3px 3px 8px rgba(0,0,0, 0.2);
+}
+
+legend {
+  cursor:move;
+  font-weight:bold;
+  
+  background: #f2f2f2;
+  background: -moz-linear-gradient(top, #f2f2f2 0%, #c4c4c4 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2f2f2), color-stop(100%,#c4c4c4));
+  background: -webkit-linear-gradient(top, #f2f2f2 0%,#c4c4c4 100%);
+  background: -o-linear-gradient(top, #f2f2f2 0%,#c4c4c4 100%);
+  background: -ms-linear-gradient(top, #f2f2f2 0%,#c4c4c4 100%);
+  background: linear-gradient(to bottom, #f2f2f2 0%,#c4c4c4 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#c4c4c4',GradientType=0 );  
+  
+  width: 100%;
+  border:1px solid #777;
+  border-radius:5px 5px 0px 0px;
+  box-shadow:0px 5px 8px rgba(50,50,50, 0.2);
+}
+
+#chatInput { width:100%; background:#f3f3f3;}
+#chatInput:focus{background:#fcfcfc;}
+#chatSend { float:right; margin:0; }
+
+#statusBox {
+width:100%; padding:5px; border-bottom:1px solid #777; height:68px; position:fixed; top:0; left:0;
+text-align:center;
+background: #c9cdd3;
+background: -moz-linear-gradient(-45deg, #c9cdd3 0%, #f4f4f4 50%, #c9cdd3 100%);
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#c9cdd3), color-stop(50%,#f4f4f4), color-stop(100%,#c9cdd3));
+background: -webkit-linear-gradient(-45deg, #c9cdd3 0%,#f4f4f4 50%,#c9cdd3 100%);
+background: -o-linear-gradient(-45deg, #c9cdd3 0%,#f4f4f4 50%,#c9cdd3 100%);
+background: -ms-linear-gradient(-45deg, #c9cdd3 0%,#f4f4f4 50%,#c9cdd3 100%);
+background: linear-gradient(135deg, #c9cdd3 0%,#f4f4f4 50%,#c9cdd3 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9cdd3', endColorstr='#c9cdd3',GradientType=1 );
+
+box-shadow:0px 3px 8px rgba(0,0,0,0.2);
+}
+#status{float:left;text-align:left;}
+
+canvas{position:absolute;left:0;top:68px; z-index:-1;}
+button{cursor:pointer;}
+hr{border:0;height:0;margin:0.6em;}
+img{border:0;}
+#glog img{vertical-align:text-top; box-shadow: 1px 1px 3px rgba(0,0,0, 0.7);}
+select[multiple] {width:200px;height:200px;}
+table{border:0;width:100%;border-collapse:collapse;}
+th{text-align:left;}
+tr:hover{background:#f9f9f9;}
+
+a,a:visited,a:active{color:#192ad1;}
+a:hover{color:#2778ff;}
+
+#boardOptions{
+  position:fixed; left:10px;top:75px;
+  z-index:1;
+}
+#opEx{
+  width:300px;
+  padding:5px;
+  background-color:rgba(255,255,255,0.75);
+}
+#opEx span{font-weight:bold;}
+#opCon{border:0;}
+
+#alertBox{
+  display:none;
+  position:fixed; width:100%;height:100%; top:0;left:0; 
+  background:rgba(0,0,0,0.5);
+}
+#alertInner{
+  position:absolute; left:50%;top:50%;
+  width:640px; height:480px; margin:-240px -320px;
+  background:#fff;
+  overflow:auto;
+}
+#Alert{
+  padding:13px;
+}
+.alertOps{text-align:center;position:absolute;bottom:0;left:0;background:#eee;width:100%;height:60px;}
+.alertOps button{margin:0px 20px;}
+
+.pStat{display:inline-block; width:294px;height:94px;}
+
+#close{
+  float:right;
+  color:black;
+  text-decoration:none;
+  border:1px solid black;
+  padding:0px 4px;
+  margin:3px;
+}
+
+.logPlayer{color:blue;}
+.logLocation{padding:1px 4px;}
+
+.House {
+  width: 20px;
+  height: 19px;
+  background: url('data:image/gif;base64,R0lGODlhFAATAKIAAAAAAP///wD/AADBAACAAP///wAAAAAAACH5BAEAAAUALAAAAAAUABMAAANJWLoKDixKQISFcpLBb2YUJ3pfKI4CFpknqjZb25IFK58eFd9zqvOy3A7YwdiIKRgRZxwim8sRNDpI1pxAq47A7Xq9xod4PC4kAAA7');
+}
+.Hotel {
+  width: 32px;
+  height: 28px;
+  background: url('data:image/gif;base64,R0lGODlhIAAcAKIAAAAAAP////8AAMoAAIAAAP///wAAAAAAACH5BAEAAAUALAAAAAAgABwAAAN3WLqs8PC1SRsgI2chQP0Wpm0eaF5EqhKlaUVwLLkAZ9/43VbX6P+bzqcHLGo4uwXRyESGmNBgaxltClHVKhKbhTqpXaCwAA77xmXzsZRWD9Ai95kdl68ddfubrh/B+3dkeXZ/gHt4hoeCiXArjo+QjmwylJUwBQkAOw==');
+}
+
+.card{
+  width:200px; 
+  text-align:center; 
+  font-size:10pt; 
+  border:3px double black; 
+  background:#FAFFD7;
+  padding:2px 2px 6px;
+}
+.deedHead{border:2px solid black; margin:3px 3px 6px;  font-variant:small-caps;}
+.deedHead span{font-size:14pt;}
+.card span {font-weight:bold;}
+.deedTerms{font-size:6pt;}
+
+.overCard{
+  position:absolute;
+  margin:-2px;
+  width:100%;
+  height:100%;
+  background:rgba(255,255,255,0.7);
+}
+.miniCard{
+  background:#FAFFD7;
+  border:1px solid black;
+  width:10px;height:15px;
+  padding:0; margin:2px;
+  display:inline-block;
+  position:relative;
+  cursor:help;
+}
+.miniCard div{ margin:0;width:10px;height:4px;}
+.miniCardTitle{display:none;}
+.miniCard:hover .miniCardTitle {
+  display:block; 
+  position:absolute;
+  left:-10px; top:25px; width:100px;
+  z-index:20;
+}
+.miniCardTitle span{
+  display:block;
+  padding:3px;
+  background:#FAFFD7;
+}
+
+.mortgaged{
+  background:rgba(255,0,0,0.9);
+  color:#fff;
+}
+.mortgaged span{
+  text-decoration: underline overline;
+  font-variant:small-caps;
+  font-size:14pt;
+}
+.mortgaged a{
+  color:#ccf;
+}
+.houseDisplay{
+  position:absolute;
+  text-align:left;
+}
+.bb{
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+h1{font-family:Times New Roman,serif;font-size:48pt;letter-spacing:6px}
+h1 sup{font-size:18pt;}
