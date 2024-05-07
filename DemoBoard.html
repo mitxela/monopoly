@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+<title></title>
+<link rel="stylesheet" type="text/css" href="style.css"><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="f.js"></script>
+<script src="board.js"></script>
+</head>
+<body>
+<div id='content' style=""></div>
+
+<script>
+
+// You probably want to look in board.js
+
+(img=new Image()).src='theme/UKboard.jpg';
+(tokenImg=new Image()).src='theme/Tokens.png';
+slot=""; colours=["#964818","#00A6EC","#E50083","#F28F00","#E50005","#FFEE00","#019837","#004D9F"]
+
+window.onload=function(){
+
+  board=setBoard(img, tokenImg, [0,1,2,3,6], true); 
+ 
+  board.setPlayers([8,15,20,25,34])
+  
+  board.setHouses(1,1)
+  board.setHouses(3,1)
+  
+  board.setHouses(16,1)
+  board.setHouses(18,2)
+  board.setHouses(19,2)
+  
+  board.setHouses(26,3)
+  board.setHouses(27,3)
+  board.setHouses(29,2)
+  
+  board.setHouses(37,4)
+  board.setHouses(39,5) //Hotel on mayfair of course
+  
+  board.iso(1.8);
+}
+
+</script>
+
+</body>
+</html>
